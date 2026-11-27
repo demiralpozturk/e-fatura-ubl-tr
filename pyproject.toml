@@ -1,0 +1,96 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "e-fatura-ubl-tr"
+dynamic = ["version"]
+description = "Unofficial Python library to build and validate Turkish e-Fatura / e-Arşiv invoices in UBL-TR 1.2 XML. Not affiliated with or certified by GİB."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Demiralp Öztürk" }]
+keywords = [
+    "e-fatura",
+    "e-arsiv",
+    "efatura",
+    "earsiv",
+    "ubl",
+    "ubl-tr",
+    "gib",
+    "invoice",
+    "einvoice",
+    "turkey",
+    "kdv",
+    "tevkifat",
+    "xml",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Natural Language :: Turkish",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Financial :: Accounting",
+    "Topic :: Text Processing :: Markup :: XML",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+    "mypy>=1.10",
+]
+
+[project.urls]
+Homepage = "https://github.com/demiralpozturk/e-fatura-ubl-tr"
+Source = "https://github.com/demiralpozturk/e-fatura-ubl-tr"
+Issues = "https://github.com/demiralpozturk/e-fatura-ubl-tr/issues"
+Changelog = "https://github.com/demiralpozturk/e-fatura-ubl-tr/blob/main/CHANGELOG.md"
+
+[tool.hatch.version]
+path = "src/efatura_ubl_tr/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/efatura_ubl_tr"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src",
+    "tests",
+    "examples",
+    "docs",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+# Turkish text legitimately contains characters such as "ı" that RUF00x flags as ambiguous.
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_unreachable = true
+files = ["src"]

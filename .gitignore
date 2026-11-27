@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# GİB schema packages are downloaded at runtime and must never be committed
+.efatura-cache/
+gib-cache/
+*.zip
+
+# Local output
+/out/
+*.local.*
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
