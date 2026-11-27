@@ -56,6 +56,9 @@ dev = [
     "mypy>=1.10",
 ]
 
+[project.scripts]
+efatura = "efatura_ubl_tr.cli:main"
+
 [project.urls]
 Homepage = "https://github.com/demiralpozturk/e-fatura-ubl-tr"
 Source = "https://github.com/demiralpozturk/e-fatura-ubl-tr"
@@ -95,6 +98,8 @@ ignore = ["RUF001", "RUF002", "RUF003"]
 
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["RUF043", "E501"]
+# The HTML/CSS template is easier to read with long lines.
+"src/efatura_ubl_tr/preview.py" = ["E501"]
 
 [tool.mypy]
 python_version = "3.10"
