@@ -34,6 +34,8 @@ from .models import (
     Withholding,
     load_invoice,
 )
+from .preview import render_html, render_invoice_html
+from .validation import ValidationResult, validate_xml
 from .words import amount_in_words, yalniz_note
 from .xml_builder import build_xml
 
@@ -58,6 +60,7 @@ __all__ = [
     "ReturnReference",
     "SupportLevel",
     "TaxExemption",
+    "ValidationResult",
     "Withholding",
     "__version__",
     "amount_in_words",
@@ -70,6 +73,9 @@ __all__ = [
     "make_invoice_number",
     "new_uuid",
     "next_invoice_number",
+    "render_html",
+    "render_invoice_html",
     "round_money",
+    "validate_xml",
     "yalniz_note",
 ]

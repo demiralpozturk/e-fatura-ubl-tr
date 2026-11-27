@@ -63,11 +63,20 @@ jobs:
       - name: Fetch GİB schema package
         id: gib
         continue-on-error: true
-        run: python -c "from efatura_ubl_tr.validation import fetch_package; print(fetch_package().describe())"
+        run: efatura schemas fetch
       - name: Pytest
         env:
           EFATURA_REQUIRE_GIB: ${{ steps.gib.outcome == 'success' && '1' || '0' }}
         run: python -m pytest -v
+      - name: CLI smoke test (build, validate, preview)
+        if: steps.gib.outcome == 'success'
+        shell: bash
+        run: |
+          for f in examples/*.json; do
+            efatura build "$f" -o "out-$(basename "$f" .json).xml"
+            efatura validate "out-$(basename "$f" .json).xml" --no-download
+            efatura preview "out-$(basename "$f" .json).xml"
+          done
       - name: Summary
         if: always()
         shell: bash
