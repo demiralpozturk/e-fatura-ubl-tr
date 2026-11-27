@@ -1,0 +1,49 @@
+{
+  "number": "MOK2026000000088",
+  "uuid": "6F7A8B9C-0D1E-4F2A-8B3C-4D5E6F7A8B9C",
+  "issue_date": "2026-11-26",
+  "profile": "TEMELFATURA",
+  "type": "OZELMATRAH",
+  "supplier": {
+    "vkn": "1357924685",
+    "name": "Marmara Örnek Kuyumculuk Ltd. Şti.",
+    "tax_office": "Osmangazi",
+    "address": {
+      "street": "Kapalıçarşı Örnek Sokak",
+      "building_number": "9",
+      "district": "Nalbantoğlu Mah.",
+      "city_subdivision": "Osmangazi",
+      "city": "Bursa",
+      "postal_code": "16010"
+    }
+  },
+  "customer": {
+    "vkn": "9876543217",
+    "name": "Boğaziçi Deneme Ticaret Ltd. Şti.",
+    "tax_office": "Beşiktaş",
+    "address": {
+      "street": "Deneme Sokak",
+      "building_number": "7",
+      "district": "Levent Mah.",
+      "city_subdivision": "Beşiktaş",
+      "city": "İstanbul",
+      "postal_code": "34330"
+    }
+  },
+  "lines": [
+    {
+      "name": "22 ayar altın bilezik",
+      "quantity": "15.2",
+      "unit_code": "GRM",
+      "unit_price": "4850.00",
+      "kdv_rate": 20,
+      "ozel_matrah": {
+        "code": "805",
+        "base": "6080.00"
+      }
+    }
+  ],
+  "notes": [
+    "KDV özel matrah (işçilik / kâr farkı) üzerinden hesaplanmış olup fiyata dahildir. Örnek amaçlıdır."
+  ]
+}

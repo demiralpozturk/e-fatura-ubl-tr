@@ -1,0 +1,48 @@
+{
+  "number": "KOE2026000000378",
+  "uuid": "4D5E6F7A-8B9C-4D0E-9F1A-2B3C4D5E6F7A",
+  "issue_date": "2026-11-24",
+  "profile": "TICARIFATURA",
+  "type": "IHRACKAYITLI",
+  "supplier": {
+    "vkn": "8642975315",
+    "name": "Karadeniz Örnek Elektronik A.Ş.",
+    "tax_office": "Karadeniz",
+    "address": {
+      "street": "Uzun Örnek Sokak",
+      "building_number": "41",
+      "district": "Kemerkaya Mah.",
+      "city_subdivision": "Ortahisar",
+      "city": "Trabzon",
+      "postal_code": "61030"
+    },
+    "website": "https://karadeniz-ornek.example"
+  },
+  "customer": {
+    "vkn": "2468135797",
+    "name": "Kapadokya Örnek Dış Ticaret A.Ş.",
+    "tax_office": "Nevşehir",
+    "address": {
+      "street": "Peribacası Örnek Caddesi",
+      "building_number": "18",
+      "district": "Göreme Mah.",
+      "city_subdivision": "Merkez",
+      "city": "Nevşehir",
+      "postal_code": "50180"
+    }
+  },
+  "lines": [
+    {
+      "name": "Elektronik kontrol kartı",
+      "quantity": "500",
+      "unit_price": "385.00",
+      "kdv_rate": 20,
+      "exemption": {
+        "code": "701"
+      }
+    }
+  ],
+  "notes": [
+    "3065 sayılı KDV Kanunu 11/1-c kapsamında ihraç kaydıyla teslim edilmiştir; hesaplanan KDV tahsil edilmemiştir."
+  ]
+}

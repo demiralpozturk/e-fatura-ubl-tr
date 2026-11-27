@@ -1,0 +1,51 @@
+{
+  "number": "KOE2026000000377",
+  "uuid": "3C4D5E6F-7A8B-4C9D-8E0F-1A2B3C4D5E6F",
+  "issue_date": "2026-11-23",
+  "profile": "TEMELFATURA",
+  "type": "SATIS",
+  "supplier": {
+    "vkn": "8642975315",
+    "name": "Karadeniz Örnek Elektronik A.Ş.",
+    "tax_office": "Karadeniz",
+    "address": {
+      "street": "Uzun Örnek Sokak",
+      "building_number": "41",
+      "district": "Kemerkaya Mah.",
+      "city_subdivision": "Ortahisar",
+      "city": "Trabzon",
+      "postal_code": "61030"
+    },
+    "website": "https://karadeniz-ornek.example"
+  },
+  "customer": {
+    "vkn": "9876543217",
+    "name": "Boğaziçi Deneme Ticaret Ltd. Şti.",
+    "tax_office": "Beşiktaş",
+    "address": {
+      "street": "Deneme Sokak",
+      "building_number": "7",
+      "district": "Levent Mah.",
+      "city_subdivision": "Beşiktaş",
+      "city": "İstanbul",
+      "postal_code": "34330"
+    }
+  },
+  "lines": [
+    {
+      "name": "Klima 18000 BTU",
+      "quantity": "4",
+      "unit_price": "21500.00",
+      "kdv_rate": 20,
+      "taxes": [
+        {
+          "code": "0074",
+          "rate": 20
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Örnek amaçlıdır; ÖTV oranını güncel (IV) sayılı listeden kontrol edin."
+  ]
+}

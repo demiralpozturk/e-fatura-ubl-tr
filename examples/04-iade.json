@@ -1,0 +1,50 @@
+{
+  "number": "BDT2026000000005",
+  "uuid": "5D6C7B8A-9E0F-4A1B-9C2D-3E4F5A6B7C8D",
+  "issue_date": "2026-11-27",
+  "profile": "TEMELFATURA",
+  "type": "IADE",
+  "supplier": {
+    "vkn": "9876543217",
+    "name": "Boğaziçi Deneme Ticaret Ltd. Şti.",
+    "tax_office": "Beşiktaş",
+    "address": {
+      "street": "Deneme Sokak",
+      "building_number": "7",
+      "district": "Levent Mah.",
+      "city_subdivision": "Beşiktaş",
+      "city": "İstanbul",
+      "postal_code": "34330"
+    }
+  },
+  "customer": {
+    "vkn": "1234567890",
+    "name": "Anadolu Örnek Yazılım A.Ş.",
+    "tax_office": "Kozyatağı",
+    "address": {
+      "street": "Örnek Caddesi",
+      "building_number": "12",
+      "district": "Kozyatağı Mah.",
+      "city_subdivision": "Kadıköy",
+      "city": "İstanbul",
+      "postal_code": "34742"
+    }
+  },
+  "lines": [
+    {
+      "name": "Teknik kitap (iade)",
+      "quantity": "1",
+      "unit_price": "312.50",
+      "kdv_rate": 10
+    }
+  ],
+  "return_references": [
+    {
+      "invoice_number": "AOY2026000000001",
+      "issue_date": "2026-11-20"
+    }
+  ],
+  "notes": [
+    "AOY2026000000001 numaralı faturaya istinaden hasarlı ürün iadesidir."
+  ]
+}

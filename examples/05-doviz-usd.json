@@ -1,0 +1,68 @@
+{
+  "number": "AOY2026000000002",
+  "uuid": "7A8B9C0D-1E2F-4A3B-8C4D-5E6F7A8B9C0D",
+  "issue_date": "2026-11-24",
+  "profile": "TICARIFATURA",
+  "type": "SATIS",
+  "currency": "USD",
+  "exchange_rate": "41.8523",
+  "supplier": {
+    "vkn": "1234567890",
+    "name": "Anadolu Örnek Yazılım A.Ş.",
+    "tax_office": "Kozyatağı",
+    "address": {
+      "street": "Örnek Caddesi",
+      "building_number": "12",
+      "district": "Kozyatağı Mah.",
+      "city_subdivision": "Kadıköy",
+      "city": "İstanbul",
+      "postal_code": "34742"
+    }
+  },
+  "customer": {
+    "vkn": "2468135797",
+    "name": "Kapadokya Örnek Dış Ticaret A.Ş.",
+    "tax_office": "Nevşehir",
+    "address": {
+      "street": "Peribacası Örnek Caddesi",
+      "building_number": "18",
+      "district": "Göreme Mah.",
+      "city_subdivision": "Merkez",
+      "city": "Nevşehir",
+      "postal_code": "50180"
+    }
+  },
+  "lines": [
+    {
+      "name": "Bulut yazılım aboneliği (12 ay)",
+      "quantity": "25",
+      "unit_price": "119.99",
+      "kdv_rate": 20,
+      "allowances": [
+        {
+          "rate": 15,
+          "reason": "Hacim indirimi"
+        },
+        {
+          "rate": 5,
+          "reason": "Erken ödeme"
+        }
+      ]
+    },
+    {
+      "name": "Danışmanlık hizmeti",
+      "quantity": "12.5",
+      "unit_code": "HUR",
+      "unit_price": "95",
+      "kdv_rate": 20
+    }
+  ],
+  "payment_means": [
+    {
+      "code": "42",
+      "due_date": "2026-12-24",
+      "iban": "TR73 9999 9000 0000 0000 0065 4321",
+      "account_currency": "USD"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "number": "KOE2026000001024",
+  "uuid": "1F2E3D4C-5B6A-4798-8A9B-ACBDCEDFE0F1",
+  "issue_date": "2026-11-26",
+  "issue_time": "10:05:00",
+  "profile": "EARSIVFATURA",
+  "type": "SATIS",
+  "supplier": {
+    "vkn": "8642975315",
+    "name": "Karadeniz Örnek Elektronik A.Ş.",
+    "tax_office": "Karadeniz",
+    "address": {
+      "street": "Uzun Örnek Sokak",
+      "building_number": "41",
+      "district": "Kemerkaya Mah.",
+      "city_subdivision": "Ortahisar",
+      "city": "Trabzon",
+      "postal_code": "61030"
+    },
+    "website": "https://karadeniz-ornek.example"
+  },
+  "customer": {
+    "tckn": "12345678950",
+    "first_name": "Elif",
+    "family_name": "Örnek",
+    "address": {
+      "street": "Deneme Bulvarı",
+      "building_number": "5",
+      "room": "8",
+      "district": "Kızılay Mah.",
+      "city_subdivision": "Çankaya",
+      "city": "Ankara",
+      "postal_code": "06420"
+    },
+    "email": "elif.ornek@posta.example"
+  },
+  "lines": [
+    {
+      "name": "Kablosuz kulaklık",
+      "quantity": "1",
+      "unit_price": "2499.00",
+      "kdv_rate": 20,
+      "seller_item_id": "KE-KLK-01",
+      "brand": "Örnek Ses"
+    },
+    {
+      "name": "Fındık (kavrulmuş)",
+      "quantity": "2.5",
+      "unit_code": "KGM",
+      "unit_price": "699.90",
+      "kdv_rate": 1,
+      "allowances": [
+        {
+          "amount": "50.00",
+          "reason": "Kupon indirimi"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "İnternet üzerinden satış. Teslim: kargo."
+  ],
+  "payment_means": [
+    {
+      "code": "48",
+      "note": "Kredi kartı ile ödendi"
+    }
+  ]
+}
