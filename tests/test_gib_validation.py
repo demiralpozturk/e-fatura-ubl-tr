@@ -95,14 +95,17 @@ def test_validate_from_file(package: SchemaPackage, tmp_path: Path) -> None:
     assert validate_xml(str(target), package=package).valid
 
 
-GIB_RECENT_SAMPLES = ["TicariFaturaOrnegi.xml", "YTB_Satıs_Efatura.xml", "YTB_Satıs_EArşiv.xml"]
+# Glob patterns: some GİB sample names contain Turkish letters whose decoding from the ZIP
+# differs between Python versions.
+GIB_RECENT_SAMPLES = ["TicariFaturaOrnegi.xml", "YTB_Sat*s_Efatura.xml", "YTB_Sat*s_EAr*iv.xml"]
 
 
-@pytest.mark.parametrize("name", GIB_RECENT_SAMPLES)
-def test_gib_own_samples_pass_schematron_runner(package: SchemaPackage, name: str) -> None:
+@pytest.mark.parametrize("pattern", GIB_RECENT_SAMPLES)
+def test_gib_own_samples_pass_schematron_runner(package: SchemaPackage, pattern: str) -> None:
     """Sanity check of the schematron interpreter against GİB's own sample invoices."""
     samples = package.samples_dir
-    if samples is None or not (samples / name).is_file():
-        pytest.skip(f"{name} not present in the cached package")
-    result = validate_xml(samples / name, package=package)
+    matches = sorted(samples.glob(pattern)) if samples is not None else []
+    if not matches:
+        pytest.skip(f"{pattern} not present in the cached package")
+    result = validate_xml(matches[0], package=package)
     assert result.valid, result.summary()
