@@ -13,7 +13,7 @@ from pydantic import ValidationError
 
 from . import __version__
 from .identifiers import NIHAI_TUKETICI_TCKN, identify_tax_id
-from .models import load_invoice
+from .models import Invoice, load_invoice
 from .preview import render_html
 from .words import amount_in_words
 
@@ -55,7 +55,7 @@ def _write(data: bytes, output: str | None) -> None:
         _err(f"wrote {output}")
 
 
-def _load(path: str):  # type: ignore[no-untyped-def]
+def _load(path: str) -> Invoice | None:
     try:
         return load_invoice(path)
     except ValidationError as exc:

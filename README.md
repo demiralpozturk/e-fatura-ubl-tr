@@ -160,7 +160,7 @@ efatura validate fatura.xml --json --no-download
 ```
 
 - İndirilen dosyalar: `UBL-TR1.2.1_Paketi.zip` (XSD) ve güncel `e-FaturaPaketi*.zip` (schematron; bağlantı `efaturamevzuat.html` sayfasından bulunur).
-- Önbellek: `EFATURA_CACHE_DIR` veya Windows'ta `%LOCALAPPDATA%\e-fatura-ubl-tr\Cache`, Linux'ta `~/.cache/e-fatura-ubl-tr`. `manifest.json` kaynak URL, `Last-Modified` ve sha256 bilgisini tutar.
+- Önbellek: `EFATURA_CACHE_DIR` veya Windows'ta `%LOCALAPPDATA%\e-fatura-ubl-tr\Cache`, Linux'ta `~/.cache/e-fatura-ubl-tr`. `manifest.json` kaynak URL, `Last-Modified` ve sha256 bilgisini tutar. GİB kuralları güncellediğinde önbelleği `efatura schemas fetch --force` ile yenileyin.
 - GİB'in sitesine erişilemiyorsa ZIP'leri tarayıcıdan indirip kurabilirsiniz:
   `efatura schemas fetch --ubltr-zip UBL-TR1.2.1_Paketi.zip --efatura-zip e-FaturaPaketi.zip`
 - GİB schematron'u XPath 2.0 kullandığı için (`matches()`, `xs:date()` …) lxml'in XSLT 1.0 tabanlı schematron desteği yetmez; kütüphane `elementpath` üzerinde küçük bir ISO Schematron yorumlayıcısı içerir. `EARSIVFATURA` belgelerinde GİB'in `type` parametresi otomatik olarak `earchive` yapılır. Yorumlayıcı, GİB'in kendi güncel örnek faturalarıyla da test edilir.
@@ -306,7 +306,7 @@ efatura preview invoice.xml -o invoice.html
 
 ### Validation and GİB's files
 
-GİB's XSD/schematron/sample files are **not committed or redistributed**: ebelge.gib.gov.tr states "© Gelir İdaresi Başkanlığı Her Hakkı Saklıdır" and the packages ship without a redistribution license (the XSDs derive from OASIS UBL 2.1 but are modified by GİB). They are downloaded from GİB at runtime into a per-user cache (`EFATURA_CACHE_DIR` to override); `efatura schemas fetch --ubltr-zip … --efatura-zip …` installs manually downloaded ZIPs. CI downloads the package on every run (weekly cache) and runs the real-schema tests; if GİB's site were unreachable those tests are skipped instead of failing. Details: [`docs/gib-files.md`](docs/gib-files.md).
+GİB's XSD/schematron/sample files are **not committed or redistributed**: ebelge.gib.gov.tr states "© Gelir İdaresi Başkanlığı Her Hakkı Saklıdır" and the packages ship without a redistribution license (the XSDs derive from OASIS UBL 2.1 but are modified by GİB). They are downloaded from GİB at runtime into a per-user cache (`EFATURA_CACHE_DIR` to override; refresh with `efatura schemas fetch --force` when GİB updates its rules); `efatura schemas fetch --ubltr-zip … --efatura-zip …` installs manually downloaded ZIPs. CI downloads the package on every run (weekly cache) and runs the real-schema tests; if GİB's site were unreachable those tests are skipped instead of failing. Details: [`docs/gib-files.md`](docs/gib-files.md).
 
 ### Limitations
 
