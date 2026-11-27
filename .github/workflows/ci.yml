@@ -39,6 +39,9 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         python-version: ["3.10", "3.12"]
+    env:
+      EFATURA_CACHE_DIR: ${{ github.workspace }}/.efatura-cache
+      PYTHONUTF8: "1"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -46,5 +49,31 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install
         run: python -m pip install -e ".[dev]"
+      - name: Cache key (ISO week)
+        id: week
+        shell: bash
+        run: echo "week=$(date -u +%G-%V)" >> "$GITHUB_OUTPUT"
+      - name: Restore GİB schema cache
+        uses: actions/cache@v4
+        with:
+          path: .efatura-cache
+          key: gib-ubltr-${{ runner.os }}-${{ steps.week.outputs.week }}
+      # GİB's files are downloaded at runtime and never committed. If ebelge.gib.gov.tr is
+      # unreachable from the runner, the real-schema tests are skipped instead of failing.
+      - name: Fetch GİB schema package
+        id: gib
+        continue-on-error: true
+        run: python -c "from efatura_ubl_tr.validation import fetch_package; print(fetch_package().describe())"
       - name: Pytest
+        env:
+          EFATURA_REQUIRE_GIB: ${{ steps.gib.outcome == 'success' && '1' || '0' }}
         run: python -m pytest -v
+      - name: Summary
+        if: always()
+        shell: bash
+        run: |
+          if [ "${{ steps.gib.outcome }}" = "success" ]; then
+            echo "GİB XSD + schematron validation: executed" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "GİB XSD + schematron validation: SKIPPED (package download failed)" >> "$GITHUB_STEP_SUMMARY"
+          fi
