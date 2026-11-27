@@ -1,0 +1,60 @@
+{
+  "number": "ETH2026000000214",
+  "uuid": "9B1D4E7A-2C3F-4A5B-8D6E-0F1A2B3C4D5E",
+  "issue_date": "2026-11-25",
+  "profile": "TICARIFATURA",
+  "type": "TEVKIFAT",
+  "supplier": {
+    "vkn": "5556667775",
+    "name": "Ege Temizlik Hizmetleri Örnek A.Ş.",
+    "tax_office": "Konak",
+    "address": {
+      "street": "Kordon Örnek Sokak",
+      "building_number": "3",
+      "district": "Alsancak Mah.",
+      "city_subdivision": "Konak",
+      "city": "İzmir",
+      "postal_code": "35220"
+    },
+    "phone": "+90 232 000 00 00"
+  },
+  "customer": {
+    "vkn": "1234567890",
+    "name": "Anadolu Örnek Yazılım A.Ş.",
+    "tax_office": "Kozyatağı",
+    "address": {
+      "street": "Örnek Caddesi",
+      "building_number": "12",
+      "district": "Kozyatağı Mah.",
+      "city_subdivision": "Kadıköy",
+      "city": "İstanbul",
+      "postal_code": "34742"
+    }
+  },
+  "lines": [
+    {
+      "name": "Ofis temizlik hizmeti - Kasım 2026",
+      "quantity": "1",
+      "unit_code": "MON",
+      "unit_price": "45000.00",
+      "kdv_rate": 20,
+      "withholding": {
+        "code": "612"
+      }
+    },
+    {
+      "name": "Temizlik sarf malzemesi",
+      "quantity": "12",
+      "unit_code": "C62",
+      "unit_price": "137.40",
+      "kdv_rate": 20
+    }
+  ],
+  "notes": [
+    "KDV Genel Uygulama Tebliği uyarınca 9/10 oranında KDV tevkifatı uygulanmıştır."
+  ],
+  "payment_terms": {
+    "note": "Fatura tarihinden itibaren 15 gün içinde ödenir.",
+    "due_date": "2026-12-10"
+  }
+}

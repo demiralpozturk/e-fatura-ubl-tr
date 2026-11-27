@@ -1,0 +1,72 @@
+{
+  "number": "AOY2026000000001",
+  "uuid": "4E8F2C1A-7B3D-4F6E-9A21-5C0D8E7F6A10",
+  "issue_date": "2026-11-20",
+  "issue_time": "14:30:00",
+  "profile": "TEMELFATURA",
+  "type": "SATIS",
+  "currency": "TRY",
+  "supplier": {
+    "vkn": "1234567890",
+    "name": "Anadolu Örnek Yazılım A.Ş.",
+    "tax_office": "Kozyatağı",
+    "address": {
+      "street": "Örnek Caddesi",
+      "building_number": "12",
+      "room": "4",
+      "district": "Kozyatağı Mah.",
+      "city_subdivision": "Kadıköy",
+      "city": "İstanbul",
+      "postal_code": "34742"
+    },
+    "email": "fatura@anadolu-ornek.example",
+    "phone": "+90 216 000 00 00",
+    "website": "https://anadolu-ornek.example",
+    "identifiers": {"MERSISNO": "0123456789000015"}
+  },
+  "customer": {
+    "vkn": "9876543217",
+    "name": "Boğaziçi Deneme Ticaret Ltd. Şti.",
+    "tax_office": "Beşiktaş",
+    "address": {
+      "street": "Deneme Sokak",
+      "building_number": "7",
+      "district": "Levent Mah.",
+      "city_subdivision": "Beşiktaş",
+      "city": "İstanbul",
+      "postal_code": "34330"
+    },
+    "email": "muhasebe@bogazici-deneme.example"
+  },
+  "lines": [
+    {
+      "name": "Yazılım lisansı (1 yıl)",
+      "quantity": "3",
+      "unit_code": "C62",
+      "unit_price": "4500.00",
+      "kdv_rate": 20,
+      "allowances": [{"rate": 10, "reason": "Kampanya iskontosu"}],
+      "seller_item_id": "LIS-001"
+    },
+    {
+      "name": "Kurulum ve eğitim hizmeti",
+      "quantity": "6",
+      "unit_code": "HUR",
+      "unit_price": "850.00",
+      "kdv_rate": 20
+    },
+    {
+      "name": "Teknik kitap",
+      "quantity": "2",
+      "unit_code": "C62",
+      "unit_price": "312.50",
+      "kdv_rate": 10
+    }
+  ],
+  "notes": ["Ödeme vadesi 30 gündür."],
+  "order_reference": {"id": "SIP-2026-0412", "issue_date": "2026-11-15"},
+  "despatch_references": [{"id": "AOI2026000000077", "issue_date": "2026-11-19"}],
+  "payment_means": [
+    {"code": "42", "due_date": "2026-12-20", "iban": "TR29 9999 9000 0000 0000 0012 3456", "bank_name": "Örnek Bankası Kadıköy Şubesi"}
+  ]
+}
