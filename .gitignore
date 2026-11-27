@@ -29,3 +29,6 @@ gib-cache/
 .idea/
 .DS_Store
 Thumbs.db
+
+# CI / local CLI smoke-test output
+/out-*
